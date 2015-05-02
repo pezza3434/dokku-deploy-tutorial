@@ -1,0 +1,41 @@
+<!--extends layout-->
+
+<!--block content-->
+<!--h1= title-->
+<!--p Welcome to #{title}-->
+
+<div>
+    <p><strong>Well done - you've deployed your app</strong></p>
+    <p>Now lets see if we can get a database connection:</p>
+</div>
+
+{{#unless error}}
+    <table border="1" width="400px">
+        <tbody>
+        <tr width="200px">
+            <td>
+                ID
+            </td>
+            <td>
+                Name
+            </td>
+        </tr>
+        {{#each users}}
+            <tr width="200px">
+                <td>
+                    {{id}}
+                </td>
+                <td>
+                    {{name}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{/unless}}
+
+{{#if error}}
+    <p class="error">There has been an error connecting to the db</p>
+{{/if}}
+
+
